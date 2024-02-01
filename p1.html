@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <title>JavaScript Polar Chart</title>
+    <script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-polar.min.js"></script>
+    <style type="text/css">
+      html,
+      body,
+      #container {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script>
+      anychart.onDocumentReady(function () {
+ 
+        // create a polar chart
+        var chart = anychart.polar();
+ 
+        // add data as an array of objects
+        var data = [
+          { x: '4 Context of organization', value: 0},
+          { x: '5 Leadership', value: 0 },
+          { x: '6 Planning ', value: 0},
+          { x: '7 Support', value: 0 },
+          { x: '8 Operatin', value: 0 },
+          { x: 'Performance evaluation', value: 0 },
+          { x: 'Illustrator', value: 0 },
+          { x: 'ggplot2', value: 0 },
+          { x: 'Power BI', value: 0 },
+          { x: 'Plotly', value: 0},
+          { x: 'Matplotlib', value: 0},
+          { x: 'Mapbox', value: 0 },
+          { x: 'QGIS', value: 0},
+          { x: 'ArcGIS', value: 0 },
+          { x: 'React', value: 0 }
+
+        ];
+ 
+        // connect the data creating a column series
+        var columnSeries = chart.column(data);
+ 
+        // set the x-scale
+        chart.xScale('ordinal');
+ 
+        // disable the y-axis
+        chart.yAxis(false);
+ 
+        // set the chart title
+        chart
+          .title('Top 15 Technologies for Data Visualization (DVS Survey 2020)');
+ 
+        // set the chart container id
+        chart.container('container');
+ 
+        // initiate the chart display
+        chart.draw();
+
+      });
+    </script>
+  </body>
+</html>

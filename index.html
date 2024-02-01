@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        //horizontal comparision chart
+        var data = google.visualization.arrayToDataTable([
+          ['data', 'No. of Request met', 'Request in Section'],
+          [' 4 Content of the Organization', 9,9],
+          [' 5 LeaderShip', 18,18],
+          [' 6 Planning', 41,41],
+          [' 7 Support', 25, 25],
+          [' 8 Operation', 9, 9],
+          [' 9 Performance evaluation', 28, 28],
+          [' 10 Improvement', 14, 14],
+          ['A.5 Information Security Policies', 2, 2],
+          [' A.6 Organization of Information Security', 7, 7],
+          [' A.7 Human Resource Security', 6, 6],
+          [' A.8 Asset Management', 10, 10],
+          [' A.9 Acess Control', 14, 14],
+          [' A.10 CryptoGraphy', 2, 2],
+          [' A.11 Physical and enviourmental securiy', 15, 15],
+          [' A.12 Operations securiy', 14, 14],
+          [' A.13 Communications securiy', 7, 7],
+          [' A.14 System acquisation , devlopment and mainteance', 13, 13],
+          [' A.15 Supplier relationships', 5, 5],
+          [' A.16 Information Security incident management', 7, 7],
+          [' A.17 Information Security aspects Of business continuity management ', 4, 4],
+          [' A.18 Compliance ', 8, 8],
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Company Performance',
+            subtitle: 'No. of Request met, Request in Section',
+          },
+          bars: 'horizontal' // Required for Material Bar Charts.
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('barchart_material'));
+
+        //vertical chart
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+
+        var data = google.visualization.arrayToDataTable([
+          ['data', 'value'],
+          ['Content of the Organization', 1],
+          ['LeaderShip', 1],
+          ['Planning', 1],
+          ['Support', 1],
+          ['Operation', 1],
+          ['Performance evaluation', 1],
+          ['Improvement', 1],
+          ['Information Security Policies', 1],
+          ['Organization of Information Security', 1],
+          ['Human Resource Security', 1],
+          ['Asset Management', 1],
+          ['Acess Control', 1],
+          ['CryptoGraphy', 1],
+          ['Physical and enviourmental securiy', 1],
+          ['Operations securiy', 1],
+          ['Communications securiy', 1],
+          ['System acquisation , devlopment and mainteance', 1],
+          ['Supplier relationships', 1],
+          ['Information Security incident management', 1],
+          ['Information Security aspects Of business continuity management ', 1],
+          ['Compliance ', 1],
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Company Performance',
+            subtitle: 'data"s values',
+          },
+          bars: 'vertical' // Required for Material Bar Charts.
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('barchart_vertical'));
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+
+
+      }
+    </script>
+  </head>
+  <body>
+    <div id="barchart_material" style="width:100vw; max-width: 100%; height:100vh;"></div>
+    <div id="barchart_vertical" style="width:100vw; max-width: 100%;  height:100vh;"></div>
+  </body>
+</html>
